@@ -1,5 +1,9 @@
-# Datastructures-Algo--in-python
+# Data Structures and Algorithms with python
  Implementation of Data Structures and Algorithms (in python)
- The objective of this repository is 
+
+ In this repo, I share my journey in practising implementation of DS and Algo. I really enjoy solving Algorithm problems and thought it would be helpful to create a collaborative platform where a community of Algo enthusiasts and learners can contribute and benefit.
+ 
+ 
+ 
 
 
