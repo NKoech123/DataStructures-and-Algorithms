@@ -1,0 +1,24 @@
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        
+        if val not in nums:
+             return len(nums)
+
+        else:
+
+            i=0
+            count=0
+            idx=len(nums)-1
+
+            while i<len(nums)-1 and i<=idx:
+                if nums[i]==val:
+                    nums.insert(len(nums),nums[i])
+                    nums.pop(i)
+                    idx-=1
+
+                else:
+                    i+=1
+                    count+=1
+
+        return count
+        
