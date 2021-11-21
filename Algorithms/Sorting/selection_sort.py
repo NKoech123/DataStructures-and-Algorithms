@@ -1,13 +1,9 @@
-def selection_sort(L):
-    # i indicates how many items were sorted
-    for i in range(len(L)-1):
-        # To find the minimum value of the unsorted segment
-        # We first assume that the first element is the lowest
+def selection_sort(arr):
+   
+    for i in range(len(arr)-1):
         min_index = i
-        # We then use j to loop through the remaining elements
-        for j in range(i+1, len(L)-1):
-            # Update the min_index if the element at j is lower than it
-            if L[j] < L[min_index]:
+   
+        for j in range(i+1, len(arr)-1):
+            if arr[j] < arr[min_index]:
                 min_index = j
-        # After finding the lowest item of the unsorted regions, swap with the first unsorted item
-        L[i], L[min_index] = L[min_index], L[i]
+        arr[i], arr[min_index] = arr[min_index], arr[i]
