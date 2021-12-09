@@ -28,6 +28,7 @@ class Linkedlist:
         if index==0:  #takes care of when index=0 since our loop doesn't do that
             to_add.next=curr
             self.head=to_add
+            
         for _ in range(index-1):
             curr=curr.next
         to_add.next=curr.next
