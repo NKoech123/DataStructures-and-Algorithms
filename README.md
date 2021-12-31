@@ -1,8 +1,10 @@
 # Data Structures and Algorithms with python
- Implementation of Data Structures and Algorithms (in python)
+ Implementation of Data Structures and Algorithms
 
- In this repo, I share my journey in practising implementation of DS and Algo. I really enjoy solving Algorithm problems and thought it would be helpful to create a collaborative platform where a community of Algo enthusiasts and learners can contribute and benefit.
- 
+In this repo, I share my journey in practising implementation of DS and Algo. I really enjoy solving Algorithm problems. I am using this repo as a means to 
+track my progress.
+
+The source of most questions: Leetcode and Cracing the Code Interview
  
  
 
