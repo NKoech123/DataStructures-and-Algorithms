@@ -7,12 +7,12 @@ track my progress.
 The source of most questions: Leetcode and Cracing the Code Interview
 
 # Topics Covered:
-# Arrays and Strings
-# Linked Lists
-# Stacks and Queues
-# Trees and Graphs
-# Sorting and Searching Algorithms
-# Bit Manipulation
+- Arrays and Strings
+- Linked Lists
+- Stacks and Queues
+- Trees and Graphs
+- Sorting and Searching Algorithms
+- Bit Manipulation
  
  
 
