@@ -15,7 +15,7 @@ class Solution:
         #target_sum after subtracting the root's value
         targetSum-=root.val
         
-        if not root.left and not root.right:
+        if not root.left and not root.right: #confirm leaf has been reached
             return targetSum==0
           
         return self.hasPathSum(root.left,targetSum) or self.hasPathSum(root.right,targetSum)
