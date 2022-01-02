@@ -8,7 +8,7 @@ The source of most questions: Leetcode and Cracing the Code Interview
 
 # Topics Covered:
 - Arrays and Strings
-- Linked Lists
+- [Linked Lists](https://github.com/NKoech123/DataStructures_and_Algorithms/tree/main/DataStructures/Linkedlist#readme)
 - Stacks and Queues
 - Trees and Graphs
 - Sorting and Searching Algorithms
