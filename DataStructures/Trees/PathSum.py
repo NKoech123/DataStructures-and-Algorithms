@@ -5,7 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
+    def hasPathSum(self, root, targetSum: int) -> bool:
         '''recursive solution'''
             
         #base case
@@ -15,7 +15,8 @@ class Solution:
         #target_sum after subtracting the root's value
         targetSum-=root.val
         
-        if not root.left and not root.right: #confirm leaf has been reached
+        # confirm leaf has been reached
+        if not root.left and not root.right:   
             return targetSum==0
           
         return self.hasPathSum(root.left,targetSum) or self.hasPathSum(root.right,targetSum)

@@ -4,16 +4,8 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:
-    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-        return self.isMirror(root,root)
-        
-        
-    def isMirror(self,root1,root2):
-        #base case
-        if root1 is None and root2 is None:
-            return True
-        '''
+
+'''
          -For tree to be symmetric,it behave like it's mirrored,satisying the conditions
          below:
          left tree                right tree=> (copy left tree )       
@@ -30,6 +22,16 @@ class Solution:
              code: self.isMirror(root1.right,root2.left)
       
         '''
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        return self.isMirror(root,root)
+        
+        
+    def isMirror(self,root1,root2):
+        #base case
+        if root1 is None and root2 is None:
+            return True
+        
         if root1 and root2:
             if root1.val==root2.val:
                 return (self.isMirror(root1.left, root2.right) and self.isMirror(root1.right, root2.left))
