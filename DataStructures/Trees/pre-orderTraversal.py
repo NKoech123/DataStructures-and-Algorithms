@@ -7,19 +7,6 @@
 class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         '''
-        pre-order: root->left->right
-        
-        1
-       n   2
-         3   n
-        stack= [root]
-        stack= [r,l]  #order of appending to stack
-        stack.pop(0)  #remove top node on stack
-        
-        stack=[]
-        output=[1,2]
-        root=[2]
-        
         Time complexity:  0(N)
         Space complexity  0(N)  -create of extra space 'output'
         '''
