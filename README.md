@@ -11,7 +11,7 @@ The source of most questions: Leetcode and Cracing the Code Interview
 - [Linked Lists](https://github.com/NKoech123/DataStructures_and_Algorithms/tree/main/DataStructures/Linkedlist#readme)
 - [Stacks and Queues](https://github.com/NKoech123/DataStructures_and_Algorithms/tree/main/Algorithms/Sortings#readme)
 - [Trees and Graphs](https://github.com/NKoech123/DataStructures_and_Algorithms/tree/main/DataStructures/Trees#readme)
-- [Sorting and Searching Algorithms] (https://github.com/NKoech123/DataStructures_and_Algorithms/tree/main/Algorithms/Sortings#readme)
+- [Sorting and Searching Algorithms](https://github.com/NKoech123/DataStructures_and_Algorithms/tree/main/Algorithms/Sortings#readme)
 - Bit Manipulation
  
  
