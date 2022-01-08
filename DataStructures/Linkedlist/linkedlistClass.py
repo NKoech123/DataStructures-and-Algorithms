@@ -31,7 +31,7 @@ class Linkedlist(object):
                 current = current.next
             newNode.next = current.next
             current.next = newNode    
-            
+    
         self.size += 1
 
     def printll(self):
@@ -40,6 +40,23 @@ class Linkedlist(object):
             print(print_val.val)
             print_val=print_val.next
 
+        
+    def remoteNthFromEnd(self, head, n):
+        p1=p2=head
+        for _ in range(n):
+            p2=p2.next  
+        if not p2:
+            return head.next
+        while p2.next:
+            p1=p1.next
+            p2=p2.next
+        #p1.next=p1.next.next
+        p1.next=p1.next.next
+        
+        return head
+        
+
+   
 """Driver Code"""
 if __name__ == '__main__':
     ll=Linkedlist()
@@ -50,8 +67,16 @@ if __name__ == '__main__':
     ll.addAtIndex(3, 4)
     ll.addAtIndex(4, 5)
 
-    #print
+  
+  
+    #Before removing Nth Element from the End
     ll.printll()
+    
+    #After removing Nth Element from the End
+    ll.remoteNthFromEnd(ll.head, 2)
+    ll.printll()
+
+ 
  
 
 
