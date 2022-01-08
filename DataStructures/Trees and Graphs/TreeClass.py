@@ -68,16 +68,21 @@ class BinarySearchTree:
         elif val>cur_node and cur_node.right!=None:
             return self._search(val,cur_node.right)
         return False
-            
-
 
 # ---Driver Code-----#
-tree=BinarySearchTree()
+
+def example():
+    tree=BinarySearchTree()
+    n1=tree.insert(1,None)
+    n2=tree.insert(2,n1)
+    n3=tree.insert(1,n2)
+    n4=tree.insert(1,n3)
+
+    tree.insert(5,n2)
+    tree.insert(7,n3)
+    tree.insert(8,n4)
+
+if __name__=="__main__":
+    example()
 
 
-tree.insert(1)
-tree.insert(0)
-tree.insert(3)
-tree.print_tree()
-
-print(tree.size)
