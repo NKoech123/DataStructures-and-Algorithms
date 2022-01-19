@@ -1,31 +1,38 @@
-from collections import defaultdict
 class Solution(object):
     def canFinish(self, numCourses, prerequisites):
-    
-        courseDict = defaultdict(list)
-      
-        for relation in prerequisites:
-            nextCourse, prevCourse = relation[0], relation[1]
-            courseDict[prevCourse].append(nextCourse)
-
-        checked, path = [False] * numCourses, [False] * numCourses
-       
-        for currCourse in range(numCourses):
-            if self.isCyclic(currCourse, courseDict, checked, path):
+        '''
+        prerequisites = [[1,0],[0,1]]
+        
+        preMap={i:[]}
+        
+        '''
+        preMap={i:[] for i in range(numCourses)}
+        
+        for crs,pre in prerequisites:
+            preMap[crs].append(pre)
+            
+        #visitSet
+        visitSet=set()
+        
+        def dfs(crs):
+          
+            if crs in visitSet:  return False  #cycle/loop detected
+            
+            if preMap[crs]==[]:  return True   #no prereq, so it can be completed
+            
+            visitSet.add(crs)                  #mark crs as visited
+            
+            #now check the pre
+            for pre in preMap[crs]:
+                if dfs(pre)==False: 
+                    return False 
+            visitSet.remove(crs)
+            preMap[crs]=[]
+            return True
+        
+        for crs in range(numCourses): 
+            if dfs(crs)==False: 
                 return False
+            
         return True
     
-    def isCyclic(self, currCourse, courseDict, checked, path):
-       
-        if checked[currCourse]: return False
-        if path[currCourse]: return True
-
-        path[currCourse], ret = True ,False
-
-        for child in courseDict[currCourse]:
-            ret = self.isCyclic(child, courseDict, checked, path)
-            if ret: break
-    
-        path[currCourse], checked[currCourse] = False ,True
-       
-        return ret
