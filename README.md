@@ -4,7 +4,7 @@
 In this repo, I share my journey in practising implementation of DS and Algo. I really enjoy solving Algorithm problems. I am using this repo as a means to 
 track my progress.
 
-The source of most questions: Leetcode and Cracing the Code Interview
+The source of most questions: Leetcode, Intro to Algorithms, and Cracing the Code Interview
 
 # Topics Covered:
 - Arrays and Strings
