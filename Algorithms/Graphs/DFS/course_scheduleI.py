@@ -34,5 +34,38 @@ class Solution(object):
             if dfs(crs)==False: 
                 return False
             
+    ###########################################################################################
+
+class Color:
+    WHITE = 0,
+    GREY = 1,
+    BLACK = 2
+
+
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        visited = [Color.WHITE] * numCourses
+        G = collections.defaultdict(list)
+        for course, r in prerequisites:
+            G[course].append(r)
+        
+        def dfs(node):
+            for prereq in G[node]:
+                if visited[prereq] == Color.WHITE:
+                    visited[prereq] = Color.GREY
+                    dfs(prereq)
+                elif visited[prereq] == Color.GREY:
+                    raise 
+            visited[node] = Color.BLACK
+        
+        try: 
+            for n in range(numCourses):
+                if visited[n] == Color.WHITE:
+                    visited[n] = Color.GREY
+                    dfs(n)
+            return True 
+        except:
+            return False
+            
         return True
     
