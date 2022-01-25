@@ -28,12 +28,11 @@ class Solution:
 
         num_row, num_col, islands= len(grid), len(grid[0]), 0
         
-        visited=set() 
             
         for r in range(num_row):
             for c in range(num_col):
                 
-                if grid[r][c]=="1" and (r,c) not in visited:
+                if grid[r][c]=="1":
                     islands+=1
                     self.dfs(r,c,grid)
                     
