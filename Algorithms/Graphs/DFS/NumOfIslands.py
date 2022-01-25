@@ -14,11 +14,12 @@ class Solution:
         
         grid[row][col]="0"
         
-        self.dfs(row+1,col,grid)
-        self.dfs(row-1,col,grid)
-        self.dfs(row,col+1,grid)
-        self.dfs(row,col-1,grid)
-       
+        directions=[[0,1],[1,0],[0,-1],[-1,0]]
+        
+        for x,y in directions:
+            new_row,new_col=x+row, y+col
+            self.dfs(new_row,new_col,grid)
+          
         
     def numIslands(self, grid: List[List[str]]) -> int:
         
