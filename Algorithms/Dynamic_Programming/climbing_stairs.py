@@ -1,17 +1,17 @@
 class Solution:
+    def __init__(self):
+        self.cache={1:1,2:2}
+        
     def climbStairs(self, n: int) -> int:
-       
-        cache={1:1,2:2}
         return self.climb(n,cache)
         
-    
     def climb(self,n,cache):
 
-        if n in cache:
-            return cache[n]
-
-
+        if n in self.cache:
+            return self.cache[n]
+        
         answer=self.climb(n-1,cache) + self.climb(n-2,cache)
-        cache[n]=answer
+        
+        self.cache[n]=answer
 
-        return cache[n]
+        return self.cache[n]
