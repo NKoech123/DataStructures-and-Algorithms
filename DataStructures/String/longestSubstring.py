@@ -18,7 +18,9 @@ class Solution:
 
             right += 1
         return res
-      
+    
+    '''Below is another solution without implementing ASCII codes'''
+    
     def Sol2lengthOfLongestSubstring(self, s: str) -> int:
         
         charSet=set()
