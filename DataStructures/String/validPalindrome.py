@@ -10,7 +10,6 @@ class Solution:
         
         while i<j:
             
-            
             while i<j and not s[i].isalnum() :
                 i+=1
                 
