@@ -1,9 +1,8 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         '''
-        we could compare s and its reverse s[::-1] to determine if s is palidrome or not, but that will result in creating extra space 0(len(s)).
-        For in-place operation, see solution below:
-        
+        use left and right two-pointers and compare chars from both ends while shrinking. Make sure all
+        chars are alphanumeric, and assume lower case for comaprison.
         '''
         
         i , j = 0 , len(s)-1
