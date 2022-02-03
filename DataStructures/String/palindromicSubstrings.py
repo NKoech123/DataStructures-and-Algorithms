@@ -4,6 +4,9 @@ class Solution:
         '''
         account for odd and even length. traverse the s while making "circles" at each point
         
+        Time: O(N*N)
+        Space: O(1)
+        
         '''
         
         count=0
