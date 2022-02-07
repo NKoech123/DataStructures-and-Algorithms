@@ -7,7 +7,8 @@ track my progress.
 The source of most questions: Leetcode, Intro to Algorithms, and Cracing the Code Interview
 
 # Topics Covered:
-- Arrays and Strings
+- [Arrays](https://github.com/NKoech123/DataStructures_and_Algorithms/tree/main/DataStructures/Arrays_Strings#readme)
+- [Strings](https://github.com/NKoech123/DataStructures_and_Algorithms/tree/main/DataStructures/String#readme)
 - [Linked Lists](https://github.com/NKoech123/DataStructures_and_Algorithms/tree/main/DataStructures/Linkedlist#readme)
 - [Stacks and Queues](https://github.com/NKoech123/DataStructures_and_Algorithms/tree/main/Algorithms/Sortings#readme)
 - [Trees and Graphs](https://github.com/NKoech123/DataStructures_and_Algorithms/tree/main/DataStructures/Trees#readme)
