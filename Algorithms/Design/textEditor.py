@@ -64,7 +64,7 @@ class TextEditor(object):
             self.text=self.history.pop()
         
     def create(self):
-        passs
+        pass
         
     def switch(self):
         pass
