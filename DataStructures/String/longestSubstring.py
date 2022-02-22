@@ -21,17 +21,22 @@ class Solution:
     
     '''Below is another solution without implementing ASCII codes'''
     
-    def Sol2lengthOfLongestSubstring(self, s: str) -> int:
-        
-        charSet=set()
-        l=0
-        res=0
-        
-        for r in range(len(s)):
-            while s[r] in charSet:
-                charSet.remove(s[l])
-                l+=1
-            charSet.add(s[r])
-            res=max(res, r-l+1)
-        return res
+
+    def lengthOfLongestSubstring(self, s: str) -> int:
     
+        
+        size=0
+        
+        for l in range(len(s)):
+            
+            visited=set()
+            r=l
+            
+            while r<len(s) and s[r] not in visited:
+                visited.add(s[r])
+                r+=1
+                
+            size = max (size , r-l)
+            visited=set()
+            
+        return size
