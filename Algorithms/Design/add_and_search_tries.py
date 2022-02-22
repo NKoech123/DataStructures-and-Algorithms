@@ -30,6 +30,7 @@ class WordDictionary:
                 c = word[i]
                 
                 if c==".":
+                    
                     for child in currNode.children.values():
                         
                         if dfs(i+1,child):
@@ -38,6 +39,7 @@ class WordDictionary:
                     
                     
                 else:
+                    
                     if c not in currNode.children:
                         return False
                     currNode=currNode.children[c]
