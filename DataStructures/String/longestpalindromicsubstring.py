@@ -1,35 +1,35 @@
 class Solution:
             
     def longestPalindrome(self, s):
-        '''
-          
-         "b  a  b  a   d"
-          
-        solve for odd and even strings. Every point behaves like a circle
-      
-        '''
-        res=[]
-        
-        resLen=0
-        
-        for i in range(len(s)):
-            #odd length
-            l,r=i,i
+     
+        longestpalindrome =""
+        for c in range(len(s)):
             
-            while l>=0 and r<len(s) and s[l]==s[r]:
-                if (r-l+1) > resLen:
-                    res=s[l:r+1]
-                    resLen=len(res)
-                l-=1
-                r+=1
+            #for odd
+            pal=self.getPalindromeLen(s,c,c)
+            if len(pal)>len(longestpalindrome):
+                longestpalindrome=pal
                 
-            #even length
-            l,r=i,i+1
-            while l>=0 and r<len(s) and s[l]==s[r]:
-                if (r-l+1) > resLen:
-                    res= s[l:r+1]
-                    resLen=len(res)
-                l-=1
-                r+=1
-                
-        return res
+            
+            
+            #for even
+            pal=self.getPalindromeLen(s,c,c+1)
+            if len(pal)>len(longestpalindrome):
+                longestpalindrome=pal
+            
+            
+        return longestpalindrome
+    
+    def getPalindromeLen(self ,s ,lo ,hi):
+        
+        pal=""
+        
+        while lo>=0 and hi<len(s) and s[lo]==s[hi] :
+            
+            lo-=1
+            hi+=1
+            
+        pal=s[lo+1:hi]
+        
+        return pal
+            
