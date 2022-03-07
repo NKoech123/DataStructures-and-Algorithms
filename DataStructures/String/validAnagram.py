@@ -6,18 +6,22 @@ Space 0(N) - for the hashmap
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         
-        if len(s) != len(t):  return False
+        #when lengths vary,then not an anagram
+        if len(s)!=len(t): return False
         
-        hashmap={s[i]:0 for i in range(len(s))}
+        #create hashmap= {char:count}
+        hashmap={}
+        for char in s:
+            hashmap[char] =1 + hashmap.get(char,0)
         
-        for j in range(len(s)):
-            hashmap[s[j]]+=1 
-        
-        for k in range(len(t)):
-            if t[k] in hashmap:
-                hashmap[t[k]]-=1
-        
-        for v in hashmap.values():
-            if v!=0:
+        #we decreament count for all the chars available in t
+        for char in t:
+            if char in hashmap:
+                hashmap[char]-=1
+        #if it's anagram, we will expect all the map values to be zero. if there's any non-zero val, then it's
+        #not an anagram
+        for val in hashmap.values():
+            if val!=0:
                 return False
         return True
+        
