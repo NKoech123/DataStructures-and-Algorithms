@@ -2,7 +2,7 @@ class Solution:
     def minWindow(self, s: str, t: str) -> str:
      
         #base case
-        if t=="": return ""
+        if t=="" or s=="": return ""
         
         #creating target map
         target_map,window_map={},{}
@@ -10,7 +10,7 @@ class Solution:
             target_map[char]=1+target_map.get(char,0)
         
 
-        have,need=0,len(t)
+        have,need=0,len(target_map)
         res,resLen=[-1,-1], float("infinity")
         l=0
         for r in range(len(s)):
