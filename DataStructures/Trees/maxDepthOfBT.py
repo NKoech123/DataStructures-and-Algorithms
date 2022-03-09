@@ -8,7 +8,7 @@
 import TreeClass
 
 class Solution:
-    def maxDepth(self, root) -> int:
+    def recursive_maxDepth(self, root) -> int:
         
         if root is None: 
             return 0
@@ -17,3 +17,29 @@ class Solution:
         right_node=self.maxDepth(root.right)
 
         return max(left_node,right_node)+1
+    
+
+    def iterative_maxDepth(self, root: Optional[TreeNode]) -> int:
+        
+    
+        stack,depth=[],0
+        
+        if not root:
+            return depth
+        else:
+            stack.append((1,root))
+        
+        while stack!=[]:
+            
+            cur_depth,root = stack.pop()
+            
+            depth = max(depth,cur_depth)
+            
+            if root.left:
+                stack.append((cur_depth+1,root.left))
+                
+            if root.right:
+                stack.append((cur_depth+1,root.right))
+                
+        return depth
+        
