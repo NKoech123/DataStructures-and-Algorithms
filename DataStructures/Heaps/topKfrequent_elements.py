@@ -1,5 +1,9 @@
 #LeetCode 345
 class Solution:
+    '''
+    Time O(N)
+    Space O(N)
+    '''
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         
         from collections import defaultdict
