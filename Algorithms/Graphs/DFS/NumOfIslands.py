@@ -6,39 +6,32 @@ Space complexity : worst case O(M*N) in case that the grid map is filled with la
 '''
 
 class Solution:
-    def dfs(self,row,col,grid):
-        
-        
-        if row<0 or row>=len(grid) or col<0 or col>=len(grid[0]) or grid[row][col]=="0":
-            return 
-        
-        grid[row][col]="0"
-        
-        directions=[[0,1],[1,0],[0,-1],[-1,0]]
-        
-        for x,y in directions:
-            new_row,new_col=x+row, y+col
-            self.dfs(new_row,new_col,grid)
-          
-        
     def numIslands(self, grid: List[List[str]]) -> int:
         
+        ROWS,COLS = len(grid), len(grid[0])
+        islands=0
+        
+        def dfs(grid,r,c):
+            
+            if r<0 or c<0 or r>=ROWS or c>=COLS or grid[r][c]=="0":
+                return
+            
+            grid[r][c]="0"
+            directions=[(-1,0),(1,0),(0,-1),(0,1)]
+            for dr,dc in directions:
+                dfs(grid,r+dr,c+dc)
+          
         if not grid or len(grid)==0:
             return 0
-
-        num_row, num_col, islands= len(grid), len(grid[0]), 0
         
-            
-        for r in range(num_row):
-            for c in range(num_col):
-                
+        for r in range(ROWS):
+            for c in range(COLS):
                 if grid[r][c]=="1":
                     islands+=1
-                    self.dfs(r,c,grid)
-                    
-                    
+                    dfs(grid,r,c)
         return islands
-                           
+        
+  
         
         
         
