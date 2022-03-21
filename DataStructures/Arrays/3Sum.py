@@ -1,37 +1,39 @@
 class Solution:
+        
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        '''
-        nums = [-1, 0, 1, 2, -1, -4]
-                 i  
-        '''
+        
+     
+        def twoSum(i ,target):
+
+            hashmap , arr = {} ,[]
+
+            j=i+1
+
+            for k in range(j,len(nums)):
+                comp = target - nums[k]
+
+                if nums[k] in hashmap:
+                    val_1 = nums[i]
+                    val_2 = nums[k]
+                    val_3 = nums[hashmap[nums[k]]]
+                   
+                    arr=sorted([val_1, val_2 , val_3])
+
+                    if arr not in res:
+                        res.append(arr)
+                        
+                else:
+                    
+                    hashmap[comp] = k
+                
         res=[]
-      
+        
         for i in range(len(nums)):
             
-            self.two_sum(nums, i,  -nums[i] , res)
-                                       
+            twoSum(i ,-nums[i])
+            
         return res
-         
-    def two_sum(self, nums, i,  target, res):
-        
-        j=i+1
-        
-        hashmap={}
-        
-        for k in range(j,len(nums)):
-            
-            compliment = target-nums[k]
-            
-            if nums[k] in hashmap:                
-               
-                temp_res = sorted((nums[hashmap[nums[k]]], nums[k] , nums[i]) )
-        
-                if temp_res not in res:
-                     res.append(temp_res)
-                   
-            hashmap[compliment] = k
-            
-        hashmap={}
+
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         '''
         (i)Sort nums.If first elem(i) is >0, then the remaining right ones aren't      worth evaluating. If i==0 or if two subsequent elem aren't same, first two sum of them
