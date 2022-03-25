@@ -39,5 +39,39 @@ class Solution:
         
         return (self.isMatch(root.left, sub_root.left) 
                 and self.isMatch(root.right, sub_root.right))
+class Iterative_Solution:
+    
+    def is_identical(self,root,sub_root):
+        stack = [(root,sub_root)]
+        
+        while stack:
+            root, sub_root = stack.pop()
+            if root and sub_root:
+                if root.val != sub_root.val:
+                    return False
+                stack.append((root.left,sub_root.left))
+                stack.append((root.right,sub_root.right))
+                
+            elif root or sub_root:
+                return False
+
+        return True
+    
+    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        
+        stack = [root]
+        
+        while stack:
+            node = stack.pop()
+            if node.val == subRoot.val:
+                if self.is_identical(node,subRoot):
+                    return True
+            if node.left:
+                stack.append(node.left)
+            if node.right:
+                stack.append(node.right)
+            
+        return False
+        
     
         
