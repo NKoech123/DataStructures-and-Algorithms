@@ -36,7 +36,6 @@ class Solution:
         if root.val!=sub_root.val:
             return False
     
-        
         return (self.isMatch(root.left, sub_root.left) 
                 and self.isMatch(root.right, sub_root.right))
 class Iterative_Solution:
