@@ -7,7 +7,6 @@ class WordDictionary: #dictionary  is just a Trie
     def __init__(self):
         self.root = TrieNode()
        
-   
     def addWord(self, word: str) -> None:
         curr = self.root
         for char in word:
