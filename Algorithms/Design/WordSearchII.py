@@ -30,7 +30,8 @@ class Solution:
         
         def dfs(r,c,node,word):
             
-            if r<0 or c<0 or r==ROWS or c==COLS or (r,c) in visit or board[r][c] not in node.children:
+            if (r<0 or c<0 or r==ROWS or c==COLS or 
+                (r,c) in visit or board[r][c] not in node.children):
                 return
             
             visit.add((r,c))
