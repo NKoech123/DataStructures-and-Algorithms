@@ -1,54 +1,43 @@
 class TrieNode:
     def __init__(self):
-        self.children={}
-        self.endOfword=False
-        
-class WordDictionary:
+        self.children ={}
+        self.endofword=False
+    
+class WordDictionary: #dictionary  is just a Trie
     def __init__(self):
         self.root = TrieNode()
-
-
+       
     def addWord(self, word: str) -> None:
-        #start with the empty TrieNode
-        currNode=self.root
+        curr = self.root
+        for char in word:
+            if char not in curr.children:
+                curr.children[char] = TrieNode()
+            curr = curr.children[char]
+        curr.endofword = True
         
-        for c in word:
-            
-            if c not in currNode.children:
-                currNode.children[c] = TrieNode()
-            currNode=currNode.children[c]
-            
-        currNode.endOfword=True
-        
-          
     def search(self, word: str) -> bool:
         
         def dfs(j,root):
-            currNode = root
-            
+            curr = root
+
             for i in range(j,len(word)):
-                c = word[i]
-                
-                if c==".":
-                    
-                    for child in currNode.children.values():
-                        
-                        if dfs(i+1,child):
+                char = word[i]
+
+                if char==".": #perform dfs
+    
+                    for child in curr.children.values():
+                        if dfs(i+1, child):
                             return True
                     return False
-                    
-                    
+
                 else:
-                    
-                    if c not in currNode.children:
+                    if char not in curr.children:
                         return False
-                    currNode=currNode.children[c]
-            return currNode.endOfword
-            
+                    curr = curr.children[char]
+            return curr.endofword
+                    
         return dfs(0,self.root)
-        
-
-
+                   
 # Your WordDictionary object will be instantiated and called as such:
 # obj = WordDictionary()
 # obj.addWord(word)
