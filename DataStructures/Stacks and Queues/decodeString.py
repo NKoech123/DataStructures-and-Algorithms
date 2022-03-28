@@ -1,5 +1,9 @@
 '''
 s= "3[a2[c]]"
+           ^
+stack =   3[a  c c  
+stack =[ a c c  a c c] #each elem is a str
+->  'accacc'
 decode ->  acc acc acc
 
 
@@ -8,8 +12,26 @@ import unittest
 
 class Solution:
     def decodeString(self, s):
-        
-        return "accaccacc"
+
+        stack=[]
+
+        for i in range(len(s)):
+            if s[i] != ']':
+                stack.append(s[i])
+            else:
+                substr=''
+                while stack[-1] !='[':
+                    substr = stack.pop() + substr
+                stack.pop()
+                k=''
+                while stack and stack[-1].isdigit():
+                    k = stack.pop() + k
+                substr = int(k) * substr
+                stack.append(substr)
+
+        return "".join(stack)
+                
+
 
 class TestClass(unittest.TestCase):
     
@@ -19,8 +41,6 @@ class TestClass(unittest.TestCase):
         expected="accaccacc"
 
         self.assertEqual(res, expected)
-
-
 
 
 if __name__ == "__main__":
