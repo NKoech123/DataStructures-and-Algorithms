@@ -8,24 +8,30 @@ class Solution:
         -else just return False
         -ultimately after the loop end, return True if stack is empty. If stack is not empty, just return False
         
+          mapping
+         '{' -> '}' 
+         '[' -> ']' 
+         '(' -> ')' 
+        
+        s= '{ } [ ]'
+        
+        stack=[{ ]
+        
+
         '''
-       
-        
-        hashmap= {  '(':')' ,'{':'}', '[':']' }
-           
-               
+        hashmap={'{' : '}' ,
+                 '[' : ']' ,
+                 '(' : ')' }
         stack=[]
-        
         for i in range(len(s)):
-                  
             if s[i] in hashmap:
-                  stack.append(s[i])
-                    
-            elif stack and s[i] == hashmap[stack[-1]]:
-               
-                    stack.pop()
+                stack.append(s[i])
+            
+            elif stack and hashmap[stack[-1]] == s[i] :
+                stack.pop()
+                
             else:
-                  return False
-                  
-        return True if not stack else False
+                return False
+            
+        return len(stack) == 0
      

@@ -6,7 +6,6 @@ stack =[ a c c  a c c] #each elem is a str
 ->  'accacc'
 decode ->  acc acc acc
 
-
 '''
 import unittest
 
@@ -31,7 +30,6 @@ class Solution:
 
         return "".join(stack)
                 
-
 
 class TestClass(unittest.TestCase):
     
