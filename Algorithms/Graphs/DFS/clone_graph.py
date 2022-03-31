@@ -5,9 +5,10 @@ class Node:
         self.val = val
         self.neighbors = neighbors if neighbors is not None else []
 """
+from collections import deque
 class Solution:
     
-    def cloneGraph(self, node: 'Node') -> 'Node':
+    def cloneGraph_dfs(self, node) -> 'Node':
         
         def dfs(node, clone_map):
             if clone_map is None: 
@@ -28,3 +29,25 @@ class Solution:
             return cloned_node
         return dfs(node,{})
     
+
+
+    def cloneGraph_bfs(self, node) -> 'Node':
+        
+        
+        visited={}
+        queue = deque([node])
+        visited[node] = Node(node.val, [])
+       
+        
+        while queue:
+            
+            n=queue.popleft()
+           
+            for nei in n.neighbors:
+                if nei not in visited:
+                    visited[nei] = Node(nei.val, [])
+                    queue.append(nei)
+                visited[n].neighbors.append(visited[nei])
+                
+        return visited[node]
+        
