@@ -6,6 +6,8 @@ class Graph:
         self.grid = grid
         self.ROWS = len(self.grid)
         self.COLS = len(self.grid[0])
+        self.direction = [(-1,0),(1,0),(0,-1),(0,1)]
+        self.islands = 0
 
     def numIslands_DFS_recursive(self) -> int:
         
@@ -34,12 +36,11 @@ class Graph:
         return islands
 
     def numIslands_DFS_iterative(self) -> int:
-
         ROWS,COLS = self.ROWS, self.COLS
         grid = self.grid
         islands = 0
         stack=[]
-        direction = [(0,1),(0,-1),(1,0),(-1,0)]
+        
 
         def dfs(r,c):
             stack.append((r,c))
@@ -48,7 +49,7 @@ class Graph:
                 r,c =stack.pop()
 
                 grid[r][c]="0"
-                for dr,dc in direction:
+                for dr,dc in self.direction:
                     row,col = dr+r, dc+c
                     #check location limits and if next location is not visited
                     if ((row >= 0 and row < ROWS 
@@ -70,36 +71,30 @@ class Graph:
         BFS uses Queue, first in,first out approach. In other words, we will process
         all the neighbors before we go to further neighbors of neighbors
         '''
-        
-        ROWS,COLS = self.ROWS, self.COLS
-        grid = self.grid
-        islands = 0
         Q=deque([])
-        direction = [(0,1),(0,-1),(1,0),(-1,0)]
    
-        for r in range(ROWS):
-            for c in range(COLS):
-                if grid[r][c] == "1":
-                    islands+=1
+        for r in range(self.ROWS):
+            for c in range(self.COLS):
+                if self.grid[r][c] == "1":
+                    self.islands+=1
                     Q.append((r,c))
 
                 while Q:
                     r,c = Q.popleft()
 
-                    grid[r][c] ="0"
+                    self.grid[r][c] ="0"
 
-                    for dr,dc in direction:
+                    for dr,dc in self.direction:
                         row,col = dr+r, dc+c
 
-                        if ((row>=0 and row<ROWS
-                           and col>=0 and col<COLS)
-                           and grid[row][col]=="1"):
+                        if ((row>=0 and row<self.ROWS
+                           and col>=0 and col<self.COLS)
+                           and self.grid[row][col]=="1"):
 
                            Q.append((row,col))
                 
 
-        return islands
-
+        return self.islands
 
 class Test(unittest.TestCase):
 
