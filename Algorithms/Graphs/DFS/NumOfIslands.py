@@ -1,4 +1,3 @@
-
 from collections import deque
 import unittest
 class Graph:
@@ -82,7 +81,7 @@ class Graph:
                 while Q:
                     r,c = Q.popleft()
 
-                    self.grid[r][c] ="0"
+                    self.grid[r][c] = "0"
 
                     for dr,dc in self.direction:
                         row,col = dr+r, dc+c

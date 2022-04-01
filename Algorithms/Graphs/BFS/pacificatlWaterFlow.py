@@ -11,6 +11,7 @@ class Solution:
   
         pacific_queue = deque()
         atl_queue = deque()
+        
         for r in range(ROWS): #pac, atl
             pacific_queue.append((r,0))
             atl_queue.append((r,COLS-1))
