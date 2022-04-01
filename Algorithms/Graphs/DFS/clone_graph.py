@@ -30,24 +30,40 @@ class Solution:
         return dfs(node,{})
     
 
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val = 0, neighbors = None):
+        self.val = val
+        self.neighbors = neighbors if neighbors is not None else []
+"""
+ 
+    def cloneGraph(self, node: 'Node') -> 'Node':
+        '''
+        -We create our first clone_node and make a reference in hashtable,
+        then add the node of the cloned node to the Queue.
+        -We go check the neighbors, clone them and make an association with 
+        the "parent" node.
+        
+        '''
 
-    def cloneGraph_bfs(self, node) -> 'Node':
+        if not node:
+            return node
         
+        visited = {}
+        Q = deque([node])
+        visited[node] = Node(node.val, []) #initiate to populate the hashmap
         
-        visited={}
-        queue = deque([node])
-        visited[node] = Node(node.val, [])
-       
-        
-        while queue:
+        while Q:
             
-            n=queue.popleft()
-           
+            n = Q.popleft()
+            
             for nei in n.neighbors:
+                
                 if nei not in visited:
                     visited[nei] = Node(nei.val, [])
-                    queue.append(nei)
+                    Q.append(nei)
+                
                 visited[n].neighbors.append(visited[nei])
                 
         return visited[node]
-        
