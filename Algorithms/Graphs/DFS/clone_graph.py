@@ -1,11 +1,12 @@
-"""
+
+from collections import deque
 # Definition for a Node.
 class Node:
     def __init__(self, val = 0, neighbors = None):
         self.val = val
         self.neighbors = neighbors if neighbors is not None else []
-"""
-from collections import deque
+
+
 class Solution:
     
     def cloneGraph_dfs(self, node) -> 'Node':
@@ -30,15 +31,8 @@ class Solution:
         return dfs(node,{})
     
 
-"""
-# Definition for a Node.
-class Node:
-    def __init__(self, val = 0, neighbors = None):
-        self.val = val
-        self.neighbors = neighbors if neighbors is not None else []
-"""
  
-    def cloneGraph(self, node: 'Node') -> 'Node':
+    def cloneGraph_bfs(self, node: 'Node') -> 'Node':
         '''
         -We create our first clone_node and make a reference in hashtable,
         then add the node of the cloned node to the Queue.
