@@ -1,5 +1,6 @@
+import heapq
 class Solution:
-    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+    def minMeetingRooms(self, intervals) -> int:
         
         if len(intervals)==0:
             return 0

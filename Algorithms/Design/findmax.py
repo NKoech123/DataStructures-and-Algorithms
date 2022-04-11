@@ -1,14 +1,10 @@
 # "Today is Monday greatest"
 class Solution:
-    
     '''
     def intersperse(e, l):
-
          res = "".join(i + j for i, j in zip(e, l))
-
          return  res
     '''
-
     def findMax(self,s):
         max_string = []
         s=s.split()
@@ -16,7 +12,7 @@ class Solution:
             max_string.append((idx,self.findFreq(elem)))
 
         idx=max(max_string, key=lambda x:x[1])[0]
-
+        
         return s[idx]
     
     def findFreq(self, word):
@@ -32,5 +28,5 @@ class Solution:
                 freq+=1
         return freq
 
-s= "Today is Monday greatest"
+s = "Today  is Monday greatest"
 print(Solution().findMax(s))
