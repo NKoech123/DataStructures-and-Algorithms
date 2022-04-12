@@ -1,27 +1,37 @@
 import heapq
 class Solution:
-    def minMeetingRooms(self, intervals) -> int:
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        '''
+       0.........................30
+          5..10         15..20
         
-        if len(intervals)==0:
-            return 0
+        0......3
+                  4.....5
+             
+             
+        minHeap =[3,5]
         
-        intervals.sort(key=lambda x:x[0])
+        start >= minHeap[0]: pop the minHeap since a meeting ended, push end_time of start to minHeap
         
-        free_rooms=[]
+        start < minHeap[0]: push end_time of start to minHeap
         
-        heapq.heappush(free_rooms, intervals[0][1])
+        '''
         
         
-        for interval in intervals[1:]:
+        intervals.sort(key=lambda interval:interval[0])
+        
+        usedRooms=[]
+        heapq.heapify(usedRooms)
+        
+        heapq.heappush(usedRooms, intervals[0][1])
+                       
+        
+        for start,end in intervals[1:]:
             
-            start_time=interval[0]
-            end_time=interval[1]
-            
-            if start_time >=free_rooms[0]:
-                heapq.heappop(free_rooms)
-            
-            heapq.heappush(free_rooms, end_time)
-            
-        return len(free_rooms)
+            if start>= usedRooms[0]:
+                heapq.heappop(usedRooms)
+            heapq.heappush(usedRooms, end)
                 
-        
+                
+        return len(usedRooms)
+     
