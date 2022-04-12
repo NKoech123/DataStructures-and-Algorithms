@@ -13,12 +13,21 @@ class Solution:
                 res.append(newInterval)
                 return res + intervals[i:]
             
+<<<<<<< HEAD
             #if newInterval comes after
             elif newInterval[0] > intervals[i][1]:
                 res.append(intervals[i])
            
             else: #for overlapping
                 newInterval = [min(newInterval[0],intervals[i][0]),
+=======
+            #check if newInterval comes after interval intervals[i]
+            elif newInterval[0]  > intervals[i][1]:
+                res.append(intervals[i])
+                
+            else:
+                newInterval = [min(newInterval[0],intervals[i][0]) ,
+>>>>>>> 59972b4d04c6e0580fa6383360d1a7b848b32547
                                max(newInterval[1],intervals[i][1])]
                 
         res.append(newInterval)
