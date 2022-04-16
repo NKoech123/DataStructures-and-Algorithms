@@ -49,8 +49,11 @@ class Solution:
         
         '''   
         p1,p2 = 1,2
+        
+        if n==p1 of n==p2:
+            return n
     
-        for _ in range(3,n):
+        for _ in range(2,n):
             p1, p2 = p2, p1+p2
         return p2
           
