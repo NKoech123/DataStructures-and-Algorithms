@@ -31,7 +31,7 @@ class Solution:
             #main logic here - if least replaceable chars are more than K, then you need to shrink that window
             while ((r-l+1) - max(count.values())) > k: 
                 
-                count[s[r]]-=1
+                count[s[l]]-=1
                 l+=1
                 
             size= max (size , r-l+1)
