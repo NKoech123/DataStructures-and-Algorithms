@@ -28,7 +28,12 @@ class Solution:
             else:
                 count[s[r]]=1
                 
-            #main logic here - if least replaceable chars are more than K, then you need to shrink that window
+                
+            '''
+            Main logic here - Least replaceable chars are the complement of the most freq chars. 
+            if least replaceable chars are more than K, then you need to shrink that window
+            '''
+           
             while ((r-l+1) - max(count.values())) > k: 
                 
                 count[s[l]]-=1
