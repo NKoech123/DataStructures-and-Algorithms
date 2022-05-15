@@ -21,14 +21,12 @@ class Solution:
     
     '''Below is another solution without implementing ASCII codes'''
     
-
     def lengthOfLongestSubstring(self, s: str) -> int:
     
-        
         size=0
         
         for l in range(len(s)):
-            
+     
             visited=set()
             r=l
             
@@ -40,3 +38,26 @@ class Solution:
             visited=set()
             
         return size
+    
+#I consider this a better solution
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        '''
+        "p  w  w  k  e   w"
+                  l     
+                         r
+ 
+        '''
+        l,r, res = 0, 0 , 0
+        
+        visited = set()
+        
+        for r in range(len(s)):
+            
+            while s[r] in visited:
+                visited.remove(s[l])
+                l+=1
+                
+            visited.add(s[r])
+            res = max(res, r-l+1)
+        return res
+                
