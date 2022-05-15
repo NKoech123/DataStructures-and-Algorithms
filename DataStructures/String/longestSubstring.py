@@ -39,7 +39,7 @@ class Solution:
             
         return size
     
-#I consider this a better solution
+#I consider this a better solution. For loop serves to count res and expand the window while the while loop narrows the window
     def lengthOfLongestSubstring(self, s: str) -> int:
         '''
         "p  w  w  k  e   w"
