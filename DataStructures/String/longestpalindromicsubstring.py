@@ -9,14 +9,11 @@ class Solution:
             pal=self.getPalindromeLen(s,c,c)
             if len(pal)>len(longestpalindrome):
                 longestpalindrome=pal
-                
-            
             
             #for even
             pal=self.getPalindromeLen(s,c,c+1)
             if len(pal)>len(longestpalindrome):
                 longestpalindrome=pal
-            
             
         return longestpalindrome
     
