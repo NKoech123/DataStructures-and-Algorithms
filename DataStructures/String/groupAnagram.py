@@ -13,7 +13,7 @@ class Solution:
             count=[0]*26
             for char in s:
                 count[ord(char)-ord('a')]+=1
-            hashmap[tuple(count)].append(s)
+            hashmap[tuple(count)].append(s) #count must be converted to a tuple to be stored as key.Tuple will be stored as one block of memory
             
         return hashmap.values()
                 
