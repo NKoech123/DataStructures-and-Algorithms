@@ -4,7 +4,6 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        # we try to rotate a group of four cells
         n = len(matrix[0])
         
         for i in range(n//2 + n%2):
