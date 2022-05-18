@@ -23,12 +23,13 @@ class Solutions:
     
     def maxProfit(self, prices: List[int]) -> int:
         '''
+        LET'S GET GREEDY!!!!
         prices = [7, 1, 5, 3, 6, 4]
         -instatiate max_profit
-        -buy on first day 
+        -buy on first day buy= Prices[0]
         -check if the next day prices are lower than buying:
              -if future prices are lower, replace future buy price with curr buy   
-        - return max_profit
+       
         
         Time- O(N)
         Space- O(1)
