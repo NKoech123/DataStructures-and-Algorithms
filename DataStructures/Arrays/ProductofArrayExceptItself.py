@@ -18,9 +18,7 @@ class Solution:
         for j in range(len(nums)-2,-1,-1):
             right[j]=right[j+1]*nums[j+1]
             
-            
         for k in range(len(nums)):
             answer[k]=right[k]*left[k]
             
-        
         return answer
