@@ -3,7 +3,6 @@ class Solution:
    
         dp= [ [0]*(len(text2)+1) for _ in range(len(text1)+1)]
         
-        
         for i in reversed(range(len(text1))):
             for j in reversed(range(len(text2))):
                 if text1[i] == text2[j]:
