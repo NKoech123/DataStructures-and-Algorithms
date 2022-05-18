@@ -1,10 +1,10 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         '''
+        Most efficient solution would be using a hashset
         -create hashset. traverse the list as you add each element to hashset if not present. if elem is present in hashset, then return true.
         -Time O(N) -linear time traversing the array
         -Space O(N)- space used with the elements of the hashtable
-        
         
         '''
         
