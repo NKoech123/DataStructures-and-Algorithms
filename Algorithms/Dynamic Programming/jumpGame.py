@@ -8,5 +8,5 @@ class Solution:
             if i + nums[i] >= lastPos:
                 lastPos= i
                 
-        return True if lastPos==0 else False
+        return lastPos==0
             
