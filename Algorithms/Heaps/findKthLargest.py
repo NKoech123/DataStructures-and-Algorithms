@@ -18,8 +18,6 @@ if __name__ == "__main__":
     
     kth=Solution().findKthLargest(nums , k ) 
 
-    print(kth)
-    
     unittest.main()
 
 
