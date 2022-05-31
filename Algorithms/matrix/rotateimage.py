@@ -18,3 +18,5 @@ class Solution:
                 matrix[j][n-1-i] = matrix[i][j]
                 
                 matrix[i][j] = tmp
+                
+        print('Done rotating!')
