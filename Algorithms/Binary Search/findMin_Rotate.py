@@ -1,17 +1,50 @@
+'''
+using array=[1,2] let's use two permutations as an example.
+First case is when arr= [1,2] 
+      [1,     2]
+       l/m    r
+       if nums[m] < nums[m+1]: return nums[m]. This comes first since we write nums[m-1] for when m=0 causing nums[-1].
+       
+ Second case is when arr = [2,1]
+        [2,  1]
+        l/m.  r
+        if nums[m] < nums[m-1]: return nums[m]
+
+'''
+
 class Solution:
-    #iterative solution
     def findMin(self, nums: List[int]) -> int:
-        l = 0
-        r = len(nums) - 1
-        while l < r:
-            mid = (r - l) // 2 + l
-            if nums[l] < nums[mid]:
-                r = mid
-            elif nums[mid] > nums[r]:
-                l = mid + 1
+        '''
+        nums = [3, 4, 5, 1, 2]
+        [1,2,3]
+        [2,1]
+           lr
+           m
+        
+        [1,2]
+        l   r
+           m
+         if nums[m] > nums[m+1]: return nums[m+1]
+         if nums[m] > nums[m-1]: return nums[m-1]
+        '''
+        l,r = 0, len(nums)-1
+        
+        if (nums[0]<nums[r] or 
+            len(nums) == 1): 
+            return nums[0]
+        
+        while l<=r:
+            m = l+ (r-l)//2
+            
+            if nums[m] > nums[m+1]:
+                return nums[m+1]
+            if nums[m] < nums[m-1]:
+                return nums[m]
+            
+            if nums[m] > nums[0]:
+                l=m+1
             else:
-                return nums[l]
-        return nums[l]
+                r=m-1
     
     #recursive solution
     def recu_findMin(self, nums):
