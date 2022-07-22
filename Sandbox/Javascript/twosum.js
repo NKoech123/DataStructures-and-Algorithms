@@ -1,3 +1,5 @@
+// Nested for-loops in js
+
 const twoSum = (nums, target) => {
     for (let i=0; i<nums.length; i++){
         for (let j=i+1; j<nums.length; j++){
@@ -9,6 +11,7 @@ const twoSum = (nums, target) => {
     
 };
 
+// Hashmap in js
 const twoSum_optimized = (nums,target) => {
     hashmap = {}
     for (let i=0; i<nums.length;i++){
