@@ -10,6 +10,7 @@ class Solution:
          box_index= [ box_index=0- r:0-2 and c:0-2]
                                 0  r=1 
         '''
+        
         #Function to find index of the boxes
         def find_boxIndex(r,c):
             return (r // 3)  + 3*(c // 3)

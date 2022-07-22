@@ -1,0 +1,6 @@
+Resources:
+
+1. https://byrony.github.io/summary-of-sql-questions-on-leetcode.html
+
+2. https://dsfaisal.com/articles/2020-11-06-leetcode-sql-problem-solving/. (BEST SO FAR)
+

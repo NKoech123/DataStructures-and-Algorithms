@@ -3,15 +3,12 @@ class HitCounter:
     def __init__(self):
         self.storage={}
         
-
     def hit(self, timestamp: int) -> None:
         
         if timestamp in self.storage:
             self.storage[timestamp]+=1
         else:
             self.storage[timestamp]=1
-        
-        
 
     def getHits(self, timestamp: int) -> int:
         
