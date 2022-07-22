@@ -69,8 +69,6 @@ def iterative_inorder(root):
             res.append(curr)
             curr=curr.right
          
-    
-
 
 def recursive_inorder(root):
     
@@ -126,7 +124,7 @@ def recursive_postorder(root):
 
     return res
 
-    
+
 #Driver program to test above
  
 if __name__ == '__main__':
